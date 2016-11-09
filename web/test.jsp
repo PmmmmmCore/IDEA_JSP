@@ -11,6 +11,9 @@
     <title>rtrrrrrrrrr</title>
 </head>
 <body>
-ddddddddddd
+    <%
+        Class.forName("org.sqlite.JDBC");
+
+    %>
 </body>
 </html>
