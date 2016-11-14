@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>nVIDIA Main Page</title>
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
-  <link rel="stylesheet" href="assets/css/styles.min.css">
+  <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+  <script src="dist/js/jquery-3.1.1.min.js"></script>
+  <script src="dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="assets/css/styles.min.css">
 </head>
 <style>
   body{
@@ -15,62 +14,55 @@
   }
 </style>
 <body>
-<nav class="navbar navbar-default navbar-inverse" role="navigation">
+
+<nav class="navbar navbar-inverse" role="navigation">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#"><img src="nvidia.png" alt="Brand"></a>
-      <p class="navbar-text">test word~</p>
+      <a class="navbar-brand" href="#">  NVIDIA  </a>
+      <p CLASS="navbar-text">World Leader in Visual Computing Technologies. </p>
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+    <div>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
+        <li><a href="registered.html"><span class="glyphicon glyphicon-user"></span> Registration</a></li>
+        <li><a href="index.html"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
+<form action="post" align="center">
+    <br>
+    <h1 style="color: rgb(97, 163, 52);">WELCOME TO JOIN US!</h1>
+    <br>
+    <br>
+</form>
 
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<table border="2" style="border-color: rgb(97,163,52)" align="center">
+    <tr><th rowspan="5">基本信息</th><th>姓名</th><td>input</td><th>性别</th><td>input</td><th rowspan="5">照片</th></tr>
+    <tr><th>出生日期</th><td>input</td><th>民族</th><td>input</td></tr>
+    <tr><th>政治面貌</th><td>input</td><th>婚姻状况</th><td>input</td></tr>
+    <tr><th>籍贯</th><td>input</td><th>现所在地</th><td>input</td></tr>
+    <tr><th>本人电话</th><td>input</td><th>Email</th><td>input</td></tr>
+
+    <tr><th rowspan="4">教育经历</th><th>起止年月</th><th>毕业学校</th><th>专业</th><th>学历</th><th>学位</th></tr>
+    <tr><td>input</td><td>input</td><td>input</td><td>input</td><td>input</td></tr>
+    <tr><td>input</td><td>input</td><td>input</td><td>input</td><td>input</td></tr>
+    <tr><td>input</td><td>input</td><td>input</td><td>input</td><td>input</td></tr>
+
+    <tr><th rowspan="5">工作经历</th><th>起止年月</th><th>工作单位</th><th>最终职位/岗位</th><th colspan="2">主要职责</th></tr>
+    <tr><td>input</td><td>input</td><td>input</td><td colspan="2">input</td></tr>
+    <tr><td>input</td><td>input</td><td>input</td><td colspan="2">input</td></tr>
+    <tr><td>input</td><td>input</td><td>input</td><td colspan="2">input</td></tr>
+    <tr><td>input</td><td>input</td><td>input</td><td colspan="2">input</td></tr>
+
+    <tr><th rowspan="6">个人技能</th><th>熟用软件</th><td colspan="4">input</td></tr>
+    <tr><th>语言能力</th><th>普通话</th><td>input</td><th>英语</th><td>input</td></tr>
+    <tr><th>其他技能</th><td colspan="4">input</td></tr>
+    <tr><th>职称/资格</th><td colspan="4">input</td></tr>
+    <tr><th>爱好特长</th><td colspan="4">input</td></tr>
+    <tr><th>所获荣誉</th><td colspan="4">input</td></tr>
+
+    <tr><th rowspan="5">自<br>我<br>评<br>价</th><td colspan="5">input</td></tr>
+</table>
+
 </body>
 </html>
