@@ -25,25 +25,25 @@
 </style>
 <body>
 <div class="login-clean">
-    <form action="post">
+    <form  action="mysql_insert.jsp" method="post">
         <div class="illustration"><img src="nvidia_logo.png" width="70%" height="70%"></div>
         <h2 style="text-align: center; margin-bottom: 30px">Create Your NVIDIA ID</h2>
         <div class="form-group">
-            <input class="form-control" type="Name" name="Name" placeholder="Name">
+            <input class="form-control" type="name" name="name" placeholder="Name">
         </div>
         <div class="form-group">
         </div>
         <div class="form-group">
-            <input class="form-control" type="Email" name="Email" placeholder="Email">
+            <input class="form-control" type="email" name="email" placeholder="Email">
         </div>
         <div class="form-group">
-            <input class="form-control" type="Password" name="Password" placeholder="Password">
+            <input class="form-control" type="password" name="password" placeholder="Password">
         </div>
         <div class="form-group">
-            <input class="form-control" type="Password" name="Password2" placeholder="Confirm Password">
+            <input class="form-control" type="password" name="password2" placeholder="Confirm Password">
         </div>
         <div class="form-group">
-            <button class="btn btn-primary btn-block" type="submit">Done</button>
+            <input class="btn btn-primary btn-block" type="submit" value="Done"> </input>
         </div>
     </form>
 </div>
