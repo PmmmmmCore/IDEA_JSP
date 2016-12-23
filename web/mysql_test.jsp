@@ -42,7 +42,7 @@
                 while (rs.next()){
                     %>
             <tr>
-                <td><%=rs.getString("email")%></td>
+                <td><%=rs.getString("")%></td>
                 <td><%=rs.getString("name")%></td>
                 <td><%=rs.getString("password")%></td>
             </tr>
