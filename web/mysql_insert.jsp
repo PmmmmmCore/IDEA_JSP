@@ -30,27 +30,25 @@
         Connection conn = DriverManager.getConnection(connUrl,DBUser,DBPasswd);
         Statement stmt = conn.createStatement();
         String insert_sql = "insert into user_info (email,password,name) values('" + email + "','" + password +"','" + name +"')";
-        String query_sql = "select * from user_info";
+        String query_sql = "select * from user_info where email='"+email+"'";
 
         try {
-                stmt.execute(insert_sql);
+            ResultSet rs = stmt.executeQuery(query_sql);
+            if (rs.next()) {
+                response.sendRedirect("registered_wrong.html");
+            }
+            else {
+                try {
+                    stmt.execute(insert_sql);
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+                response.sendRedirect("registered_done.html");
+            }
 
         }catch (Exception e)    {
             e.printStackTrace();
         }
-
-        try {
-            ResultSet rs = stmt.executeQuery(query_sql);
-            while (rs.next()) {
-                %>
-                Name = <%=rs.getString("name")%> <br>
-                Email = <%=rs.getString("email")%> <br>
-                Password = <%=rs.getString("password")%> <br>
-                <%
-            }
-        }catch (Exception e) {
-                e.printStackTrace();
-                        }
 
                             stmt.close();
                             conn.close();

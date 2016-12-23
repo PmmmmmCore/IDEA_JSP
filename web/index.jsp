@@ -26,7 +26,7 @@
 </style>
 <body background="">
 <div class="login-clean">
-  <form method="post">
+  <form action="login.jsp" method="post">
     <!-- <h2 class="sr-only">Login Form</h2> -->
     <div class="illustration"><img src="nvidia_logo.png" width="70%" height="70%"></div>
     <h2 style="text-align: center; margin-bottom: 30px">Log In NVIDIA</h2>
@@ -37,7 +37,7 @@
       <input class="form-control" type="password" name="password" placeholder="Password">
     </div>
     <div class="form-group">
-      <button class="btn btn-primary btn-block" type="submit" onclick="window.open('login.jsp')">Log In</button>
+      <input class="btn btn-primary btn-block" type="submit" value="Log In">
     </div><a href="registered.jsp" class="forgot">No account ?&nbsp; Register</a></form>
 </div>
 <script src="assets/js/jquery.min.js"></script>

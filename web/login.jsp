@@ -1,39 +1,45 @@
 <%@ page import="javax.swing.plaf.nimbus.State" %>
 <%@ page import="java.sql.*" %>
+<%@ page import="static java.lang.Class.forName" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    String driveName = "com.mysql.jdbc.Driver";
-    String DBUser = "root";
-    String DBPasswd = "";
+    request.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8");
+    response.setContentType("text/html; charset=utf-8");
+%>
+<%
+    String email=request.getParameter("email");
+    String password=request.getParameter("password");
+
     java.util.Date date=new java.util.Date();
-    String connUrl = "jdbc:mysql://localhost/jsp";
-    String email = request.getParameter("email");
-    String password = request.getParameter("password");
-    String sql = "select * from user_info where email='"+email+"' and password='"+password+"'";
-    Statement stmt = null;
-    ResultSet rs = null;
-    try
-    {
+    String datetime=new Timestamp(date.getTime()).toString();
+
+    try {
+        String driveName = "com.mysql.jdbc.Driver";
+        String DBUser = "root";
+        String DBPasswd = "";
+
+        String connUrl = "jdbc:mysql://localhost/jsp";
         Class.forName(driveName).newInstance();
         Connection conn = DriverManager.getConnection(connUrl,DBUser,DBPasswd);
-        stmt = conn.createStatement();
-        rs = stmt.executeQuery(sql);
-        if (rs.next())
-        {
-            session.setAttribute("email",email);
-            response.sendRedirect("index.jsp");
-            %>
-                Email = <%=rs.getString("email")%> <br>
-                Password = <%=rs.getString("password")%> <br>
-            <%
+        Statement stmt = conn.createStatement();
+        String sql = "select * from user_info where email='"+email+"' and password='"+password+"'";
+
+        try {
+            ResultSet rs = stmt.executeQuery(sql);
+            if (rs.next()) {
+                response.sendRedirect("main.html");
+            }
+            else {
+                response.sendRedirect("wrong.html");
+            }
+        }catch (Exception e) {
+            e.printStackTrace();
         }
-        else
-        {
-            response.sendRedirect("index.jsp");
-        }
-    }
-    catch (SQLException e)
-    {
+        stmt.close();
+        conn.close();
+    }catch (Exception e) {
         e.printStackTrace();
     }
+
 %>
