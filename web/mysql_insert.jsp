@@ -38,6 +38,7 @@
         }catch (Exception e)    {
             e.printStackTrace();
         }
+
         try {
             ResultSet rs = stmt.executeQuery(query_sql);
             while (rs.next()) {
@@ -50,6 +51,7 @@
         }catch (Exception e) {
                 e.printStackTrace();
                         }
+
                             stmt.close();
                             conn.close();
 

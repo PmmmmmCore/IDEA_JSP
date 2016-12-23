@@ -37,7 +37,7 @@
       <input class="form-control" type="password" name="password" placeholder="Password">
     </div>
     <div class="form-group">
-      <button class="btn btn-primary btn-block" type="submit" onclick="window.open('main.html')">Log In</button>
+      <button class="btn btn-primary btn-block" type="submit" onclick="window.open('login.jsp')">Log In</button>
     </div><a href="registered.jsp" class="forgot">No account ?&nbsp; Register</a></form>
 </div>
 <script src="assets/js/jquery.min.js"></script>
