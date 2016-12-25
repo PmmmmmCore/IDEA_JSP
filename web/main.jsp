@@ -86,7 +86,7 @@
     <br>
     <br>
 </form>
-<form action="jianli_insert.jsp" method="post">
+<form action="jianli_update.jsp" method="post">
     <table border="2" width="800"  style="border-color: rgb(97,163,52)" align="center" >
         <tr><th rowspan="5">基<br>本<br>信<br>息</th><th>姓名</th><td><input type="text" name="name" value="<%=rs.getShort("name")%>"></td><th>性别</th><td><input
                 type="text" name="sex" value="<%=rs.getString("sex")%>"></td><th rowspan="5">照片</th></tr>
