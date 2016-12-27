@@ -48,7 +48,6 @@
         </div>
         <div>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="registered.jsp"><span class="glyphicon glyphicon-user"></span> Registration</a></li>
                 <li><a href="index.jsp"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
             </ul>
         </div>
@@ -66,29 +65,29 @@
         String driveName = "com.mysql.jdbc.Driver";
         String DBUser = "root";
         String DBPasswd = "";
-        String str = (String) session.getAttribute("email");
+        String email = request.getParameter("email");
 
         String connUrl = "jdbc:mysql://localhost/jsp";
         Class.forName(driveName).newInstance();
         Connection conn = DriverManager.getConnection(connUrl,DBUser,DBPasswd);
         Statement stmt = conn.createStatement();
-        String sql = "select * from jianli where email='" + str + "'";
+        String sql = "select * from jianli where email='" + email + "'";
 
         try {
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()){
 
-            %>
+%>
 
 <form action="post" align="center">
     <br>
-    <h1 style="color: rgb(97, 163, 52);">WELCOME TO JOIN US!</h1>
+    <h1 style="color: rgb(97, 163, 52);">详 细 信 息</h1>
     <br>
     <br>
 </form>
-<form action="jianli_update.jsp" method="post">
+<form action="admin_main.jsp" method="">
     <table border="2" width="800"  style="border-color: rgb(97,163,52)" align="center" >
-        <tr><th rowspan="5">基<br>本<br>信<br>息</th><th>姓名</th><td><input type="text" name="name" value="<%=rs.getShort("name")%>"></td><th>性别</th><td><input
+        <tr><th rowspan="5">基<br>本<br>信<br>息</th><th>姓名</th><td><input type="text" name="name" value="<%=rs.getString("name")%>"></td><th>性别</th><td><input
                 type="text" name="sex" value="<%=rs.getString("sex")%>"></td><th rowspan="5">照片</th></tr>
         <tr><th>出生日期</th><td><input type="text" name="chusheng" value="<%=rs.getString("chusheng")%>"></td><th>民族</th><td><input type="text" name="mingzu" value="<%=rs.getString("mingzu")%>"></td></tr>
         <tr><th>政治面貌</th><td><input type="text" name="zhengzhi" value="<%=rs.getString("zhengzhi")%>"></td><th>婚姻状况</th><td><input type="text" name="hunyin" value="<%=rs.getString("hunyin")%>"></td></tr>
@@ -114,7 +113,7 @@
         <tr><th>所获荣誉</th><td colspan="4"><input type="text" name="rongyu" value="<%=rs.getString("rongyu")%>"></td></tr>
 
         <tr><th rowspan="1">自<br>我<br>评<br>价</th><td colspan="5"><textarea name="ziwopingjia" id="" cols="90" rows="5" value="<%=rs.getString("ziwopingjia")%>"><%=rs.getString("ziwopingjia")%></textarea></td></tr>
-        <th colspan="6"><input type="submit" value="提交"></th>
+        <th colspan="6"><input type="submit" value="完成"></th>
     </table>
 </form>
 

@@ -44,7 +44,7 @@
 <table class="table table-hover">
     <tr>
         <td></td>
-        <td>#</td>
+        <td>NO.</td>
         <td>Name</td>
         <td>Email</td>
         <td>More...</td>
@@ -65,14 +65,16 @@
             int i = 1;
             while (rs.next()) {
                 %>
+    <form action="admin_jianli.jsp" method="post">
                 <tr>
                     <td></td>
                     <td><%=i++%></td>
                     <td><%=rs.getString("name")%></td>
-                    <td><%=rs.getString("email")%></td>
-                    <td></td>
+                    <td><input type="hidden" name="email" value="<%=rs.getString("email")%>"><%=rs.getString("email")%></td>
+                    <td><input type="submit" class="btn btn-info btn-xs" value="Detail"></td>
                     <td></td>
                 </tr>
+    </form>
     <%
             }
         }catch (Exception e) {

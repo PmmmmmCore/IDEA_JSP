@@ -49,7 +49,7 @@
     String zhize1=request.getParameter("zhize1");
     String zhize2=request.getParameter("zhize2");
     String zhize3=request.getParameter("zhize3");
-    String ruanjian=request.getParameter("ruanji");
+    String ruanjian=request.getParameter("ruanjian");
     String putonghua=request.getParameter("putonghua");
     String yingwen=request.getParameter("yingwen");
     String qita=request.getParameter("qita");
@@ -59,7 +59,7 @@
     String ziwopingjia=request.getParameter("ziwopingjia");
     String zhengzhi=request.getParameter("zhengzhi");
     String qizhi7=request.getParameter("qizhi7");
-    String danwei4=request.getParameter("damwei4");
+    String danwei4=request.getParameter("danwei4");
     String zhiwei4=request.getParameter("zhiwei4");
     String zhize4=request.getParameter("zhize4");
 
