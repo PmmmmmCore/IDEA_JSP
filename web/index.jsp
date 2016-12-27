@@ -38,7 +38,9 @@
     </div>
     <div class="form-group">
       <input class="btn btn-primary btn-block" type="submit" value="Log In">
-    </div><a href="registered.jsp" class="forgot">No account ?&nbsp; Register</a></form>
+    </div><a href="registered.jsp" class="forgot">No account ?&nbsp; Register</a>
+    <a href="admin_login.html" class="forgot">Administrator? Log in</a>
+  </form>
 </div>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
