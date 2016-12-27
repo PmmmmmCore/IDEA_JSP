@@ -85,7 +85,7 @@
     <br>
     <br>
 </form>
-<form action="admin_main.jsp" method="">
+<form action="admin_pass.jsp" method="post">
     <table border="2" width="800"  style="border-color: rgb(97,163,52)" align="center" >
         <tr><th rowspan="5">基<br>本<br>信<br>息</th><th>姓名</th><td><input type="text" name="name" value="<%=rs.getString("name")%>"></td><th>性别</th><td><input
                 type="text" name="sex" value="<%=rs.getString("sex")%>"></td><th rowspan="5">照片</th></tr>
@@ -113,7 +113,7 @@
         <tr><th>所获荣誉</th><td colspan="4"><input type="text" name="rongyu" value="<%=rs.getString("rongyu")%>"></td></tr>
 
         <tr><th rowspan="1">自<br>我<br>评<br>价</th><td colspan="5"><textarea name="ziwopingjia" id="" cols="90" rows="5" value="<%=rs.getString("ziwopingjia")%>"><%=rs.getString("ziwopingjia")%></textarea></td></tr>
-        <th colspan="6"><input type="submit" value="完成"></th>
+        <th colspan="3"><input type="submit" name="pass" value="PASS"></th><th colspan="3"><input type="submit" name="fail" value="FAIL"></th>
     </table>
 </form>
 

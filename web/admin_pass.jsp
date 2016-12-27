@@ -8,9 +8,8 @@
     response.setContentType("text/html; charset=utf-8");
 %>
 <%
-    String name=request.getParameter("name");
+    String pass=request.getParameter("pass");
     String email=request.getParameter("email");
-    String password=request.getParameter("password");
 
     java.util.Date date=new java.util.Date();
     String datetime=new Timestamp(date.getTime()).toString();
@@ -24,32 +23,22 @@
         Class.forName(driveName).newInstance();
         Connection conn = DriverManager.getConnection(connUrl,DBUser,DBPasswd);
         Statement stmt = conn.createStatement();
-        String insert_sql = "insert into user_info (email,password,name) values('" + email + "','" + password +"','" + name +"')";
-        String query_sql = "select * from user_info where email='"+email+"'";
+        String update_pass = "UPDATE user_info SET state=1 WHERE email='"+ email +"'";
+       // String update_fail = "UPDATE user_info SET state=2 WHERE email='"+ email +"'";
 
         try {
-            ResultSet rs = stmt.executeQuery(query_sql);
-            if (rs.next()) {
-                response.sendRedirect("registered_wrong.html");
-            }
-            else {
-                try {
-                    stmt.execute(insert_sql);
-                }catch (Exception e) {
-                    e.printStackTrace();
-                }
-                response.sendRedirect("registered_done.html");
-            }
-
-        }catch (Exception e)    {
+            stmt.execute(update_pass);
+            response.sendRedirect("admin_main.jsp");
+        }catch (Exception e) {
             e.printStackTrace();
         }
 
-                            stmt.close();
-                            conn.close();
 
-}catch (Exception e) {
-                e.printStackTrace();
-            }
+        stmt.close();
+        conn.close();
+
+    }catch (Exception e) {
+        e.printStackTrace();
+    }
 
 %>

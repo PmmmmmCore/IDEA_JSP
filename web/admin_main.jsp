@@ -72,7 +72,8 @@
                     <td><%=rs.getString("name")%></td>
                     <td><input type="hidden" name="email" value="<%=rs.getString("email")%>"><%=rs.getString("email")%></td>
                     <td><input type="submit" class="btn btn-info btn-xs" value="Detail"></td>
-                    <td></td>
+                    <td><input type="submit" name="pass" class="btn btn-success btn-xs disabled" value="PASS" style="border-width: 2px;width: 50px">
+                    <input type="submit" name="fail" class="btn btn-danger btn-xs disabled" value="FAIL" style="width: 50px"></td>
                 </tr>
     </form>
     <%
