@@ -47,8 +47,8 @@
         <td>#</td>
         <td>Name</td>
         <td>Email</td>
-        <td>State</td>
         <td>More...</td>
+        <td>State</td>
     </tr>
     <%
         try {
@@ -60,9 +60,21 @@
             Class.forName(driveName).newInstance();
             Connection conn = DriverManager.getConnection(connUrl, DBUser, DBPasswd);
             Statement stmt = conn.createStatement();
-            String sql = "select * from jianli where 1";
+            String sql = "select * from jianli";
             ResultSet rs=stmt.executeQuery(sql);
-            while (rs.next())
+            int i = 1;
+            while (rs.next()) {
+                %>
+                <tr>
+                    <td></td>
+                    <td><%=i++%></td>
+                    <td><%=rs.getString("name")%></td>
+                    <td><%=rs.getString("email")%></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+    <%
+            }
         }catch (Exception e) {
             e.printStackTrace();
         }
